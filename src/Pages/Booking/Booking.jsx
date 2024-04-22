@@ -10,6 +10,11 @@ const doctorDetails = {
 };
 
 const BookingPage = () => {
+
+  // const api = axios.create({
+  //   baseURL: process.env.REACT_APP_API_URL, // Replace with your environment variable name
+  // });
+
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState("");
   const [bookedAppointments, setBookedAppointments] = useState([]);

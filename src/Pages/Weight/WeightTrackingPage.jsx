@@ -6,6 +6,9 @@ import PatientSidebar from "../../Components/PatientSidebar/PatientSidebar";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 
 const WeightTrackingPage = () => {
+  const api = axios.create({
+    baseURL: process.env.REACT_APP_API_URL, // Replace with your environment variable name
+  });
   const userInfoString = localStorage.getItem("userInfo"); // Retrieve string from local storage
   const userInfo = userInfoString ? JSON.parse(userInfoString) : null; // Parse string to object
   const [weightData, setWeightData] = useState([]);
@@ -31,7 +34,7 @@ const WeightTrackingPage = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      const response = await axios.get("/api/weight/weights", config);
+      const response = await api.get("/api/weight/weights", config);
       setWeightData(response.data);
     } catch (error) {
       console.error("Error fetching weight data:", error);
@@ -52,7 +55,7 @@ const WeightTrackingPage = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      await axios.post("/api/weight/create-weight", formData, config);
+      await api.post("/api/weight/create-weight", formData, config);
       fetchWeightData(); // Fetch updated data after saving
       fetchWeightData();
       setFormData({

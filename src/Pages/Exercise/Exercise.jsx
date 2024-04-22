@@ -9,6 +9,11 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 
 
 const ExerciseTracker = () => {
+
+  const api = axios.create({
+    baseURL: process.env.REACT_APP_API_URL, // Replace with your environment variable name
+  });
+
   const [workoutRoutines, setWorkoutRoutines] = useState([
     {
       name: "Cardio",
@@ -58,7 +63,7 @@ const ExerciseTracker = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      const response = await axios.get("/api/exercise/exercises", config);
+      const response = await api.get("/api/exercise/exercises", config);
       setLoggedExercises(response.data);
       updateChartData(response.data);
     } catch (error) {
@@ -84,7 +89,7 @@ const ExerciseTracker = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      const response = await axios.post(
+      const response = await api.post(
         "/api/exercise/create-exercise",
         exercise,
         config

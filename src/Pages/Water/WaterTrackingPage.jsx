@@ -6,6 +6,11 @@ import PatientSidebar from "../../Components/PatientSidebar/PatientSidebar";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 
 const WaterTrackingPage = () => {
+
+  const api = axios.create({
+    baseURL: process.env.REACT_APP_API_URL, // Replace with your environment variable name
+  });
+
   const userInfoString = localStorage.getItem("userInfo"); // Retrieve string from local storage
   const userInfo = userInfoString ? JSON.parse(userInfoString) : null; // Parse string to object
 
@@ -26,7 +31,7 @@ const WaterTrackingPage = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      const response = await axios.get("/api/water/waters", config);
+      const response = await api.get("/api/water/waters", config);
       const parsedData = response.data.map((entry) => ({
         ...entry,
         date: new Date(entry.date), // Parse date string to Date object
@@ -119,7 +124,7 @@ const WaterTrackingPage = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      await axios.post(
+      await api.post(
         "/api/water/create-water",
         {
           date: currentDate,

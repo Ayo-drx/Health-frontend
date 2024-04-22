@@ -7,6 +7,11 @@ import PatientSidebar from "../../Components/PatientSidebar/PatientSidebar";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 
 const NutritionTrackingPage = () => {
+
+  const api = axios.create({
+    baseURL: process.env.REACT_APP_API_URL, // Replace with your environment variable name
+  });
+
   const [mealData, setMealData] = useState([]);
   const [formData, setFormData] = useState({
     date: "",
@@ -49,7 +54,7 @@ const NutritionTrackingPage = () => {
         };
 
         // Make API request with axios
-        const response = await axios.get("/api/meal/meals", config);
+        const response = await api.get("/api/meal/meals", config);
         setMealData(response.data);
       } catch (error) {
         console.error("Error fetching meals:", error);
@@ -99,7 +104,7 @@ const NutritionTrackingPage = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      const response = await axios.post(
+      const response = await api.post(
         "/api/meal/create-meal",
         formData,
         config

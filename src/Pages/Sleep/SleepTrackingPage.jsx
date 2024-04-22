@@ -6,6 +6,11 @@ import PatientSidebar from "../../Components/PatientSidebar/PatientSidebar";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 
 const SleepTrackingPage = () => {
+
+  const api = axios.create({
+    baseURL: process.env.REACT_APP_API_URL, // Replace with your environment variable name
+  });
+
   const userInfoString = localStorage.getItem("userInfo"); // Retrieve string from local storage
   const userInfo = userInfoString ? JSON.parse(userInfoString) : null; // Parse string to object
 
@@ -52,7 +57,7 @@ const SleepTrackingPage = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      const response = await axios.get("/api/sleep/sleeps", config);
+      const response = await api.get("/api/sleep/sleeps", config);
       setSleepData(response.data);
       updateSleepHoursChartData(response.data);
     } catch (error) {
@@ -74,7 +79,7 @@ const SleepTrackingPage = () => {
           "Content-Type": "application/json", // Adjust content type if necessary
         },
       };
-      const response = await axios.post(
+      const response = await api.post(
         "/api/sleep/create-sleep",
         formData,
         config
