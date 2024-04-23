@@ -179,11 +179,12 @@
   /* max-width: 800px; */
   /* border: 2px solid red; */
   /* margin: 0 auto; */
-  min-height: 65vh;
+  min-height: 90vh !important;
   display: flex;
   transition: transform 0.5s ease;
   width: 100%;
-  height: auto;
+  /* border: 2px solid red; */
+
   background-color: aliceblue;
   /* border: 2px solid red; */
 }
@@ -218,6 +219,24 @@
     /* border: 2px solid red; */
     /* object-fit: contain; */
   }
+  @media (max-width: 450px) {
+    .caro-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      /* max-width: 800px; */
+      /* border: 2px solid red; */
+      /* margin: 0 auto; */
+      min-height: auto;
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+      /* border: 2px solid red; */
+      min-height: 70vh !important;
+      background-color: aliceblue;
+      /* border: 2px solid red; */
+    }
+  }
   .prev-btn,
   .next-btn {
     position: absolute;
@@ -232,10 +251,11 @@
     cursor: pointer;
     z-index: 2;
     background-color: rgb(255, 253, 253);
-    height: 30px;
-    width: 30px;
+    min-height: 45px;
+    min-width: 30px;
     border-radius: 50%;
     transition: 0.5s ease;
+    /* border: 2px solid red; */
   }
 }
 .caro-item img {
@@ -265,6 +285,30 @@
   color: rgb(14, 71, 133);
 }
 .caro-cap h1:nth-child(4) {
+  color: rgb(235, 72, 72);
+}
+.caro-cap {
+  /* border: 2px solid blue; */
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.caro-capp h1 {
+  font-size: 2.5rem;
+}
+.caro-capp h1:nth-child(1) {
+  color: rgb(220, 218, 218);
+  font-size: 6rem;
+}
+.caro-capp h1:nth-child(2) {
+  color: rgb(235, 72, 72);
+}
+.caro-capp h1:nth-child(3) {
+  color: rgb(14, 71, 133);
+}
+.caro-capp h1:nth-child(4) {
   color: rgb(235, 72, 72);
 }
 
@@ -331,11 +375,13 @@
 .hero4-btn button {
   padding: 0.5rem 2rem;
   border: none;
-  color: #fff;
+  color: #fff !important;
+
+  cursor: no-drop;
 }
 .hero4-btn button:nth-child(1) {
   border: 2px solid var(--color-primary);
-  color: black;
+  color: black !important;
   transition: 0.3s ease-in;
   background-color: white;
 }

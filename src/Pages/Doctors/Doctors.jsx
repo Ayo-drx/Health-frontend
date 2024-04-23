@@ -221,14 +221,7 @@ const Doctor = () => {
               >
                 Locations
               </button>
-              <button
-                className={activeTab === "reviews" ? "active" : ""}
-                onClick={(e) => handleTabClick("reviews", e)}
-                onMouseEnter={handleTabHover}
-                onMouseLeave={handleTabLeave}
-              >
-                Reviews
-              </button>
+            
             
               <div className="line" style={lineStyle}></div>
               <div className="line2" style={lineStyle2}></div>
@@ -324,81 +317,7 @@ const Doctor = () => {
                   </div>
                 </div>
               )}
-              {activeTab === "reviews" && (
-                <div>
-                  <div className="d-flex justify-content-between">
-                    {" "}
-                    <div className="d-flex gap-3">
-                      <div className="patient-img">
-                        <img className="img-fluid" src="/images/patient.jpg" />
-                      </div>
-                      <div>
-                        <h3>Richard Wilson</h3>
-                        <p>Reviewed 2 Days ago</p>
-                        <div className="d-flex align-items-center like">
-                          <span class="material-symbols-outlined">
-                            thumb_up
-                          </span>
-                          <p className="mb-0">I recommend the doctor</p>
-                        </div>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation. Curabitur non nulla sit amet
-                          nisl tempus
-                        </p>
-                      </div>
-                    </div>
-                    <div className="star">
-                      <ReactStars
-                        count={5}
-                        size={20}
-                        value={4.5}
-                        edit={false}
-                        activeColor="#ffd700"
-                      />
-                    </div>
-                  </div>
-                  <div className="feed">
-                    <button>Show all Feedback (176)</button>
-                  </div>
-                  <div className="mt-5">
-                    <div>
-                      <h3>Write a review for Dr. Darren Elder</h3>
-                      <p>Review</p>
-                      <div className="review">
-                        <h3>Leave a Review</h3>
-                        <div className="review-rating">
-                          {/* <label htmlFor="rating">Rating:</label> */}
-                          <select
-                            id="rating"
-                            value={rating}
-                            onChange={handleRatingChange}
-                          >
-                            <option value={5}>5 stars</option>
-                            <option value={4}>4 stars</option>
-                            <option value={3}>3 stars</option>
-                            <option value={2}>2 stars</option>
-                            <option value={1}>1 star</option>
-                          </select>
-                        </div>
-                        <div className="review-input">
-                          <textarea
-                            value={reviewText}
-                            onChange={handleReviewTextChange}
-                            placeholder="Write your review (max 100 characters)"
-                          ></textarea>
-                          <span className="character-counter">
-                            {MAX_CHARACTERS - reviewText.length} characters left
-                          </span>
-                        </div>
-                        <button className="add-review">Add Review</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
+             
              
               {activeTab === "location" && (
                 <div>

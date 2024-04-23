@@ -13,7 +13,7 @@ const Header = () => {
   const sections = [
     { id: "home", label: "HOME", to: "/", dropdown: null },
     { id: "dashboard", label: "DASHBOARD", to: "/profile", dropdown: null },
-    { id: "contact", label: "CONTACT", to: "/contact", dropdown: null },
+    // { id: "contact", label: "CONTACT", to: "/contact", dropdown: null },
    
   ];
 

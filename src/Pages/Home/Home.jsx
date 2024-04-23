@@ -58,6 +58,16 @@ const Home = () => {
   };
   return (
     <div className="home-wrapper">
+      <div className="d-md-none d-block caro-capp mb-3 container">
+        <h1>01</h1>
+        <h1>Elevate Your Well-being!</h1>
+        <h1>Discover Vitality</h1>
+        <h1>Through Fitness</h1>
+        <div className="caro-btn d-flex gap-5">
+          <button>Explore Workouts</button>
+          <button>Unlock Nutrition</button>
+        </div>
+      </div>
       <section className="caro-container">
         {slides.map((slide, index) => (
           <div
@@ -66,13 +76,13 @@ const Home = () => {
           >
             <img src={slide.imageUrl} className="img-fluid" />
             <div className="caro-cap">
-              <h1>0{index + 1}</h1>
-              <h1>Emergency?</h1>
-              <h1>Find Nearest</h1>
-              <h1>Medical Facility</h1>
+              <h1>01</h1>
+              <h1>Elevate Your Well-being!</h1>
+              <h1>Discover Vitality</h1>
+              <h1>Through Fitness</h1>
               <div className="caro-btn d-flex gap-5">
-                <button>View Hospitals</button>
-                <button>View Doctors</button>
+                <button>Explore Workouts</button>
+                <button>Unlock Nutrition</button>
               </div>
             </div>
           </div>
@@ -214,7 +224,6 @@ const Home = () => {
                         electric_bolt
                       </span>
                     </div>
-                 
                   </div>
                   <div>
                     <div className="d-flex fourth-profile-1">
@@ -280,7 +289,7 @@ const Home = () => {
                 Lorem ipsum dolor amet consectetur adipisicing eliteiuim sete
                 eiusmod tempor incididunt ut labore etnalom dolore magna aliqua.
               </p>
-              <div className="d-flex align-items-center gap-2">
+              <div className="d-flex align-items-center gap-2 flex-wrap">
                 <img className="img-fluid" src="/images/h5-1.png" alt="" />
                 <img className="img-fluid" src="/images/h5-2.png" alt="" />
               </div>
@@ -304,7 +313,7 @@ const Home = () => {
             <div className="col-md-4 col-sm-6 col-12 op mt-3 ">
               <div className="x">
                 <div className="x-item mb-3">
-                  <img className="img-fluid" src="/images/art1.jpg" alt="" />
+                  <img className="img-fluid" src="/images/art3.jpg" alt="" />
                   <div className="light">
                     <span class="material-symbols-outlined">electric_bolt</span>
                   </div>

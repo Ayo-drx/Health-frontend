@@ -109,10 +109,11 @@ nav {
   background-color: var(--color-primary);
   padding: 0.5rem 1rem;
   border: none;
-  color: white;
+  color: white !important;
   /* border-radius: 2rem; */
   font-weight: 600;
   font-size: 0.7rem;
+
 }
 .get-started:hover {
   background-color: var(--color-primary-hover);
